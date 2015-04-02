@@ -43,7 +43,7 @@
 				PreprocessorDefinitions=",UNICODE,WIN32;QT_NO_DEBUG,NDEBUG;QT_CORE_LIB;QT_GUI_LIB"
 				RuntimeLibrary="0"
 				TreatWChar_tAsBuiltInType="false"
-				DebugInformationFormat="0"
+				DebugInformationFormat="4"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -60,7 +60,7 @@
 				OutputFile="..\bin\$(ProjectName).exe"
 				AdditionalLibraryDirectories="$(QTDIR)\lib"
 				UACExecutionLevel="2"
-				GenerateDebugInformation="false"
+				GenerateDebugInformation="true"
 				SubSystem="2"
 			/>
 			<Tool
@@ -586,7 +586,7 @@
 		/>
 		<Global
 			Name="QtVersion Win32"
-			Value="Qt 4"
+			Value="Qt_static"
 		/>
 		<Global
 			Name="RccDir"

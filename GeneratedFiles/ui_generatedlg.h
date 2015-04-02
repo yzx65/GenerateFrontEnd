@@ -1,7 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'generatedlg.ui'
 **
-** Created by: Qt User Interface Compiler version 4.8.6
+** Created: Thu Apr 2 10:24:29 2015
+**      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -153,9 +154,10 @@ public:
         if (GenerateDlg->objectName().isEmpty())
             GenerateDlg->setObjectName(QString::fromUtf8("GenerateDlg"));
         GenerateDlg->resize(470, 474);
-        GenerateDlg->setStyleSheet(QString::fromUtf8("QWidget\n"
+        GenerateDlg->setStyleSheet(QString::fromUtf8("QWidget#GenerateDlg\n"
 "{\n"
 "	font-family:\"Microsoft Yahei\";\n"
+"	background-color:white;\n"
 "}"));
         verticalLayout = new QVBoxLayout(GenerateDlg);
         verticalLayout->setSpacing(6);
@@ -217,42 +219,27 @@ public:
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tab = new QWidget();
         tab->setObjectName(QString::fromUtf8("tab"));
-        tab->setStyleSheet(QString::fromUtf8("QWidget#tab\n"
-"{\n"
-"	background-color:#f2f2f2;\n"
-"}"));
+        tab->setStyleSheet(QString::fromUtf8(""));
         verticalLayout_2 = new QVBoxLayout(tab);
         verticalLayout_2->setSpacing(0);
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         scrollArea = new QScrollArea(tab);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
-        scrollArea->setStyleSheet(QString::fromUtf8(" QScrollBar:vertical {\n"
-"     border: 0px solid grey;\n"
-"     background: transparent;\n"
-"     width: 10px;\n"
-" }\n"
-" QScrollBar::handle:vertical {\n"
-"     background: #cccccc;;\n"
-"     min-height: 100px;\n"
-" }\n"
-" QScrollBar::handle:vertical:hover {\n"
-"     background: #aaaaaa;\n"
-"     min-heiht: 100px;\n"
-" }\n"
-" QScrollBar::add-line:vertical {\n"
-"	border:none;\n"
-"	background:transparent;\n"
-" }\n"
-" QScrollBar::sub-line:vertical {\n"
-"	border:none;\n"
-"	background:transparent;\n"
-" }"));
+        scrollArea->setStyleSheet(QString::fromUtf8(""));
         scrollArea->setFrameShape(QFrame::NoFrame);
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 323, 598));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 316, 598));
+        scrollAreaWidgetContents->setStyleSheet(QString::fromUtf8("QWidget#scrollAreaWidgetContents\n"
+"{\n"
+"	background-color:white;\n"
+"}\n"
+"QWidget\n"
+"{\n"
+"	font-family:\"Microsoft Yahei\";\n"
+"}"));
         verticalLayout_8 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_8->setSpacing(6);
         verticalLayout_8->setContentsMargins(11, 11, 11, 11);
@@ -661,7 +648,12 @@ public:
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
         tab_2->setStyleSheet(QString::fromUtf8("QWidget#tab_2\n"
 "{\n"
-"	background-color:#f2f2f2;\n"
+"	background-color:white;\n"
+"}\n"
+"\n"
+"QWidget\n"
+"{\n"
+"	font-family:\"Microsoft Yahei\";\n"
 "}"));
         verticalLayout_5 = new QVBoxLayout(tab_2);
         verticalLayout_5->setSpacing(6);

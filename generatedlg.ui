@@ -14,9 +14,10 @@
    <string>生成植入模块</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget
+   <string notr="true">QWidget#GenerateDlg
 {
 	font-family:&quot;Microsoft Yahei&quot;;
+	background-color:white;
 }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -92,7 +93,7 @@ QWidget
          <string>Windows</string>
         </property>
         <property name="icon">
-         <iconset resource="maindlg.qrc">
+         <iconset>
           <normaloff>:/image/windows_online.png</normaloff>:/image/windows_online.png</iconset>
         </property>
        </item>
@@ -101,7 +102,7 @@ QWidget
          <string>Mac OS</string>
         </property>
         <property name="icon">
-         <iconset resource="maindlg.qrc">
+         <iconset>
           <normaloff>:/image/mac_online.png</normaloff>:/image/mac_online.png</iconset>
         </property>
        </item>
@@ -110,7 +111,7 @@ QWidget
          <string>IOS</string>
         </property>
         <property name="icon">
-         <iconset resource="maindlg.qrc">
+         <iconset>
           <normaloff>:/image/ipad_iphone.png</normaloff>:/image/ipad_iphone.png</iconset>
         </property>
        </item>
@@ -119,7 +120,7 @@ QWidget
          <string>Android</string>
         </property>
         <property name="icon">
-         <iconset resource="maindlg.qrc">
+         <iconset>
           <normaloff>:/image/android_online.png</normaloff>:/image/android_online.png</iconset>
         </property>
        </item>
@@ -132,10 +133,7 @@ QWidget
        </property>
        <widget class="QWidget" name="tab">
         <property name="styleSheet">
-         <string notr="true">QWidget#tab
-{
-	background-color:#f2f2f2;
-}</string>
+         <string notr="true"/>
         </property>
         <attribute name="title">
          <string>植入模块配置</string>
@@ -150,27 +148,7 @@ QWidget
          <item>
           <widget class="QScrollArea" name="scrollArea">
            <property name="styleSheet">
-            <string notr="true"> QScrollBar:vertical {
-     border: 0px solid grey;
-     background: transparent;
-     width: 10px;
- }
- QScrollBar::handle:vertical {
-     background: #cccccc;;
-     min-height: 100px;
- }
- QScrollBar::handle:vertical:hover {
-     background: #aaaaaa;
-     min-heiht: 100px;
- }
- QScrollBar::add-line:vertical {
-	border:none;
-	background:transparent;
- }
- QScrollBar::sub-line:vertical {
-	border:none;
-	background:transparent;
- }</string>
+            <string notr="true"/>
            </property>
            <property name="frameShape">
             <enum>QFrame::NoFrame</enum>
@@ -183,9 +161,19 @@ QWidget
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>323</width>
+              <width>316</width>
               <height>598</height>
              </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QWidget#scrollAreaWidgetContents
+{
+	background-color:white;
+}
+QWidget
+{
+	font-family:&quot;Microsoft Yahei&quot;;
+}</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_8">
              <item>
@@ -799,7 +787,12 @@ QCheckBox::indicator:checked:disabled {
         <property name="styleSheet">
          <string notr="true">QWidget#tab_2
 {
-	background-color:#f2f2f2;
+	background-color:white;
+}
+
+QWidget
+{
+	font-family:&quot;Microsoft Yahei&quot;;
 }</string>
         </property>
         <attribute name="title">

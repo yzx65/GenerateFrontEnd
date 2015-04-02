@@ -819,12 +819,14 @@ void GenerateDlg::PlatformChanged(QListWidgetItem* item)
 		ui.chkPlg3->setChecked(false);
 		ui.grpUsb->hide();
 
-		//ui.grpEnvironment->show();
-		ui.grpEnvironment->hide();
-		//ui.grpRoot->show();
+		ui.grpEnvironment->show();
+		//ui.grpEnvironment->hide();
+		ui.grpRoot->show();
 		// 暂时不需要此功能
 		//ui.grpEnvironment->hide();
 		ui.grpRoot->hide();
+		ui.groupBox_2->hide();
+		ui.chkAlternate->hide();
 
 		ui.grpNetEnvironment->hide();
 		ui.chkPlg2->setEnabled(false);
@@ -1565,20 +1567,22 @@ void GenerateDlg::InitCustomGui()
 	QListWidgetItem* ios = ui.lstPlatform->takeItem(0);
 	QListWidgetItem* android = ui.lstPlatform->takeItem(0);
 
-	if ( Exist(GetExePath() + L"\\_Plugin\\WINDOWS") )
-		ui.lstPlatform->addItem(windows);
+	//if ( Exist(GetExePath() + L"\\_Plugin\\WINDOWS") )
+	//	ui.lstPlatform->addItem(windows);
 
-	if ( Exist(GetExePath() + L"\\_Plugin\\MACOSX") )
-		ui.lstPlatform->addItem(mac);
+	//if ( Exist(GetExePath() + L"\\_Plugin\\MACOSX") )
+	//	ui.lstPlatform->addItem(mac);
 
-	if ( Exist(GetExePath() + L"\\_Plugin\\IOS") )
-		ui.lstPlatform->addItem(ios);
+	//if ( Exist(GetExePath() + L"\\_Plugin\\IOS") )
+	//	ui.lstPlatform->addItem(ios);
 
 	if ( Exist(GetExePath() + L"\\_Plugin\\ANDROID") )
 		ui.lstPlatform->addItem(android);
 
 	PlatformChanged(ui.lstPlatform->item(0));
 	ui.lstPlatform->item(0)->setSelected(true);
+	ui.lstPlatform->hide();
+	ui.btnCancel->hide();
 }
 
 void GenerateDlg::GenerateFinished()
