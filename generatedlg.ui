@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>470</width>
-    <height>474</height>
+    <height>513</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -796,7 +796,7 @@ QWidget
 }</string>
         </property>
         <attribute name="title">
-         <string>USB及屏幕插件</string>
+         <string>多媒体插件</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
@@ -1018,21 +1018,94 @@ QWidget
               </item>
              </layout>
             </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_5">
+           <property name="title">
+            <string>语音监控</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_10">
             <item>
-             <spacer name="verticalSpacer">
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
+             <widget class="QCheckBox" name="chkCallIn">
+              <property name="text">
+               <string>拨入电话监控</string>
               </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>40</height>
-               </size>
+              <property name="checked">
+               <bool>true</bool>
               </property>
-             </spacer>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="chkCallOut">
+              <property name="text">
+               <string>拨出电话监控</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_15">
+              <item>
+               <widget class="QSpinBox" name="spnTime">
+                <property name="maximum">
+                 <number>9999</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_12">
+                <property name="text">
+                 <string>分钟后自动停止录音（0为不限时）</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
             </item>
            </layout>
           </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_6">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </widget>

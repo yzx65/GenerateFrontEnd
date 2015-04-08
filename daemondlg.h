@@ -62,6 +62,7 @@ private:
 	// 将配置信息写入中转服务器
 	bool UpdateDaemonResource(std::wstring daemonFile);
 
+
 private:
 	Ui::DaemonDlg ui;
 };

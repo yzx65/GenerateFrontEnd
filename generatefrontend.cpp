@@ -8,6 +8,7 @@ GenerateFrontEnd::GenerateFrontEnd(QWidget *parent, Qt::WFlags flags)
 	ui.setupUi(this);
 
 	this->setWindowFlags(Qt::Dialog | Qt::WindowTitleHint);
+
 	InitWidgetAppearance();
 }
 
@@ -33,6 +34,7 @@ void GenerateFrontEnd::AddPage(QString pageName, QWidget* page)
 {
 	QRadioButton* btn = new QRadioButton(this);
 	btn->setText(pageName);
+	btn->setObjectName(pageName);
 	btn->setStyleSheet(
 		"QRadioButton::indicator{width:0px;height:0px;}"
 		"QRadioButton{background-color:rgb(247, 249, 255);border:0px solid #cccccc;border-bottom-width:1px;min-width:120px;min-height:35px;font-family:'Microsoft Yahei';font-size:12px;color:black;padding-left:20px;}"

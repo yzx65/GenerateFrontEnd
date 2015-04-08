@@ -30,6 +30,8 @@ DaemonDlg::DaemonDlg(QWidget *parent)
 	ui.edtPort3->setValidator(mask);
 
 	connect(ui.btnOk, SIGNAL(clicked()), this, SLOT(OnOk()));
+
+	InitCustomText(this);
 }
 
 // ////////////////////////////////////////////////////////////////////////////////

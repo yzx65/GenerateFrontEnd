@@ -286,4 +286,52 @@ inline bool SHDel(LPCWSTR dir)
 	return result == 0;
 }
 
+inline std::wstring ReadStringPolicyFromLocal(LPCWSTR wzSection, LPCWSTR wzKey, std::wstring wzIniPath)
+{
+	WCHAR wzString[MAX_PATH] = {0};
+	GetPrivateProfileStringW(wzSection, wzKey, L"", wzString, MAX_PATH, wzIniPath.c_str());
+
+	return std::wstring(wzString);
+}
+
+inline void WriteStringPolicyToLocal(LPCWSTR wzSection, LPCWSTR wzKey, LPCWSTR value, std::wstring wzIniPath)
+{
+	WCHAR wzString[MAX_PATH] = {0};
+	WritePrivateProfileStringW(wzSection, wzKey, value, wzIniPath.c_str());
+}
+
+template<typename T>
+void SetName(T* widget, std::wstring iniPath, QWidget* parent)
+{
+	QList<T*> children = parent->findChildren<T*>();
+
+	for ( int i = 0; i < children.size(); ++i )
+	{
+		T* label = children.at(i);
+		std::wstring text = ReadStringPolicyFromLocal(L"Text", label->objectName().toStdWString().c_str(), iniPath);
+
+		if ( text != L"" )
+			label->setText(QString::fromStdWString(text));
+
+		qDebug() << label->text();
+
+		WriteStringPolicyToLocal(L"Text", label->objectName().toStdWString().c_str(), label->text().toStdWString().c_str(), iniPath);
+	}
+}
+
+inline void InitCustomText(QWidget* widget)
+{
+	std::wstring iniPath = GetExePath() + L"\\Config\\" + widget->objectName().toStdWString() + L".ini";
+	QLabel* label = NULL;
+	SetName(label, iniPath, widget);
+	QCheckBox* chkBox = NULL;
+	SetName(chkBox, iniPath, widget);
+	QPushButton* pushBtn = NULL;
+	SetName(pushBtn, iniPath, widget);
+	QRadioButton* radioBtn = NULL;
+	SetName(radioBtn, iniPath, widget);
+	QLineEdit* edit = NULL;
+	SetName(edit, iniPath, widget);
+}
+
 #endif // CONFIGPARSER_H

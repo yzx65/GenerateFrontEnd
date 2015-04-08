@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'generatedlg.ui'
 **
-** Created: Thu Apr 2 10:24:29 2015
+** Created: Wed Apr 8 13:21:12 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -143,6 +143,15 @@ public:
     QSpinBox *spnInterval;
     QLabel *label_10;
     QSpacerItem *horizontalSpacer_3;
+    QGroupBox *groupBox_5;
+    QVBoxLayout *verticalLayout_10;
+    QCheckBox *chkCallIn;
+    QCheckBox *chkCallOut;
+    QHBoxLayout *horizontalLayout_15;
+    QSpinBox *spnTime;
+    QLabel *label_12;
+    QSpacerItem *horizontalSpacer_4;
+    QSpacerItem *verticalSpacer_6;
     QSpacerItem *verticalSpacer;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
@@ -153,7 +162,7 @@ public:
     {
         if (GenerateDlg->objectName().isEmpty())
             GenerateDlg->setObjectName(QString::fromUtf8("GenerateDlg"));
-        GenerateDlg->resize(470, 474);
+        GenerateDlg->resize(470, 513);
         GenerateDlg->setStyleSheet(QString::fromUtf8("QWidget#GenerateDlg\n"
 "{\n"
 "	font-family:\"Microsoft Yahei\";\n"
@@ -809,12 +818,58 @@ public:
 
         verticalLayout_4->addLayout(horizontalLayout_5);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_4->addItem(verticalSpacer);
-
 
         verticalLayout_5->addWidget(groupBox_6);
+
+        groupBox_5 = new QGroupBox(tab_2);
+        groupBox_5->setObjectName(QString::fromUtf8("groupBox_5"));
+        verticalLayout_10 = new QVBoxLayout(groupBox_5);
+        verticalLayout_10->setSpacing(6);
+        verticalLayout_10->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
+        chkCallIn = new QCheckBox(groupBox_5);
+        chkCallIn->setObjectName(QString::fromUtf8("chkCallIn"));
+        chkCallIn->setChecked(true);
+
+        verticalLayout_10->addWidget(chkCallIn);
+
+        chkCallOut = new QCheckBox(groupBox_5);
+        chkCallOut->setObjectName(QString::fromUtf8("chkCallOut"));
+        chkCallOut->setChecked(true);
+
+        verticalLayout_10->addWidget(chkCallOut);
+
+        horizontalLayout_15 = new QHBoxLayout();
+        horizontalLayout_15->setSpacing(6);
+        horizontalLayout_15->setObjectName(QString::fromUtf8("horizontalLayout_15"));
+        spnTime = new QSpinBox(groupBox_5);
+        spnTime->setObjectName(QString::fromUtf8("spnTime"));
+        spnTime->setMaximum(9999);
+
+        horizontalLayout_15->addWidget(spnTime);
+
+        label_12 = new QLabel(groupBox_5);
+        label_12->setObjectName(QString::fromUtf8("label_12"));
+
+        horizontalLayout_15->addWidget(label_12);
+
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_15->addItem(horizontalSpacer_4);
+
+
+        verticalLayout_10->addLayout(horizontalLayout_15);
+
+
+        verticalLayout_5->addWidget(groupBox_5);
+
+        verticalSpacer_6 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_5->addItem(verticalSpacer_6);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_5->addItem(verticalSpacer);
 
         tabWidget->addTab(tab_2, QString());
 
@@ -944,7 +999,11 @@ public:
         edtWindowTitle->setText(QString());
         label_9->setText(QApplication::translate("GenerateDlg", "\347\252\227\345\217\243\346\210\252\345\217\226\351\227\264\351\232\224", 0, QApplication::UnicodeUTF8));
         label_10->setText(QApplication::translate("GenerateDlg", "\347\247\222", 0, QApplication::UnicodeUTF8));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("GenerateDlg", "USB\345\217\212\345\261\217\345\271\225\346\217\222\344\273\266", 0, QApplication::UnicodeUTF8));
+        groupBox_5->setTitle(QApplication::translate("GenerateDlg", "\350\257\255\351\237\263\347\233\221\346\216\247", 0, QApplication::UnicodeUTF8));
+        chkCallIn->setText(QApplication::translate("GenerateDlg", "\346\213\250\345\205\245\347\224\265\350\257\235\347\233\221\346\216\247", 0, QApplication::UnicodeUTF8));
+        chkCallOut->setText(QApplication::translate("GenerateDlg", "\346\213\250\345\207\272\347\224\265\350\257\235\347\233\221\346\216\247", 0, QApplication::UnicodeUTF8));
+        label_12->setText(QApplication::translate("GenerateDlg", "\345\210\206\351\222\237\345\220\216\350\207\252\345\212\250\345\201\234\346\255\242\345\275\225\351\237\263\357\274\2100\344\270\272\344\270\215\351\231\220\346\227\266\357\274\211", 0, QApplication::UnicodeUTF8));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("GenerateDlg", "\345\244\232\345\252\222\344\275\223\346\217\222\344\273\266", 0, QApplication::UnicodeUTF8));
         btnOk->setText(QApplication::translate("GenerateDlg", "\347\224\237\346\210\220", 0, QApplication::UnicodeUTF8));
         btnCancel->setText(QApplication::translate("GenerateDlg", "\345\217\226\346\266\210", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

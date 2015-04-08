@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'generatefrontend.ui'
 **
-** Created: Thu Apr 2 10:06:55 2015
+** Created: Wed Apr 8 13:21:12 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
