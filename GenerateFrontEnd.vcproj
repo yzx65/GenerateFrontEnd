@@ -272,6 +272,10 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\resource.h"
+				>
+			</File>
+			<File
 				RelativePath=".\waitdlg.h"
 				>
 				<FileConfiguration
@@ -389,6 +393,26 @@
 			ParseFiles="false"
 			>
 			<File
+				RelativePath=".\GenerateFrontEnd.png"
+				>
+				<FileConfiguration
+					Name="Release|Win32"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCustomBuildTool"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
 				RelativePath=".\generatefrontend.qrc"
 				>
 				<FileConfiguration
@@ -398,7 +422,7 @@
 						Name="VCCustomBuildTool"
 						Description="Rcc&apos;ing $(InputFileName)..."
 						CommandLine="&quot;$(QTDIR)\bin\rcc.exe&quot; -name &quot;$(InputName)&quot; -no-compress &quot;$(InputPath)&quot; -o .\GeneratedFiles\qrc_$(InputName).cpp&#x0D;&#x0A;"
-						AdditionalDependencies="$(InputPath)"
+						AdditionalDependencies="$(InputPath);.\GenerateFrontEnd.png"
 						Outputs=".\GeneratedFiles\qrc_$(InputName).cpp"
 					/>
 				</FileConfiguration>
@@ -409,7 +433,7 @@
 						Name="VCCustomBuildTool"
 						Description="Rcc&apos;ing $(InputFileName)..."
 						CommandLine="&quot;$(QTDIR)\bin\rcc.exe&quot; -name &quot;$(InputName)&quot; -no-compress &quot;$(InputPath)&quot; -o .\GeneratedFiles\qrc_$(InputName).cpp&#x0D;&#x0A;"
-						AdditionalDependencies="$(InputPath)"
+						AdditionalDependencies="$(InputPath);.\GenerateFrontEnd.png"
 						Outputs=".\GeneratedFiles\qrc_$(InputName).cpp"
 					/>
 				</FileConfiguration>
@@ -562,6 +586,14 @@
 				</File>
 			</Filter>
 		</Filter>
+		<File
+			RelativePath=".\GenerateFrontEnd.ico"
+			>
+		</File>
+		<File
+			RelativePath=".\GenerateFrontEnd.rc"
+			>
+		</File>
 	</Files>
 	<Globals>
 		<Global
@@ -586,7 +618,7 @@
 		/>
 		<Global
 			Name="QtVersion Win32"
-			Value="qt-everywhere-opensource-src-4.8.6"
+			Value="Qt_static"
 		/>
 		<Global
 			Name="RccDir"
