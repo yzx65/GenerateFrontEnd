@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'generatedlg.ui'
 **
-** Created: Tue Apr 14 09:37:02 2015
+** Created: Wed May 20 21:37:36 2015
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -61,8 +61,6 @@ public:
     QHBoxLayout *horizontalLayout_14;
     QRadioButton *chkLocal;
     QHBoxLayout *horizontalLayout_12;
-    QLabel *label_11;
-    QComboBox *cmbApkIcon;
     QGroupBox *grpRoot;
     QHBoxLayout *horizontalLayout_11;
     QRadioButton *chkRooted;
@@ -162,7 +160,7 @@ public:
     {
         if (GenerateDlg->objectName().isEmpty())
             GenerateDlg->setObjectName(QString::fromUtf8("GenerateDlg"));
-        GenerateDlg->resize(470, 513);
+        GenerateDlg->resize(470, 587);
         GenerateDlg->setStyleSheet(QString::fromUtf8("QWidget#GenerateDlg\n"
 "{\n"
 "	font-family:\"Microsoft Yahei\";\n"
@@ -240,7 +238,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 316, 598));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 316, 594));
         scrollAreaWidgetContents->setStyleSheet(QString::fromUtf8("QWidget#scrollAreaWidgetContents\n"
 "{\n"
 "	background-color:white;\n"
@@ -318,16 +316,6 @@ public:
         horizontalLayout_12 = new QHBoxLayout();
         horizontalLayout_12->setSpacing(6);
         horizontalLayout_12->setObjectName(QString::fromUtf8("horizontalLayout_12"));
-        label_11 = new QLabel(grpEnvironment);
-        label_11->setObjectName(QString::fromUtf8("label_11"));
-
-        horizontalLayout_12->addWidget(label_11);
-
-        cmbApkIcon = new QComboBox(grpEnvironment);
-        cmbApkIcon->setObjectName(QString::fromUtf8("cmbApkIcon"));
-
-        horizontalLayout_12->addWidget(cmbApkIcon);
-
 
         horizontalLayout_14->addLayout(horizontalLayout_12);
 
@@ -932,12 +920,6 @@ public:
         grpEnvironment->setTitle(QApplication::translate("GenerateDlg", "\346\250\241\345\235\227\350\277\220\350\241\214\347\216\257\345\242\203", 0, QApplication::UnicodeUTF8));
         chkRemote->setText(QApplication::translate("GenerateDlg", "PC \347\253\257\345\256\211\350\243\205", 0, QApplication::UnicodeUTF8));
         chkLocal->setText(QApplication::translate("GenerateDlg", "\347\247\273\345\212\250\347\253\257\345\256\211\350\243\205", 0, QApplication::UnicodeUTF8));
-        label_11->setText(QApplication::translate("GenerateDlg", "\350\256\276\347\275\256apk\345\233\276\346\240\207\357\274\232", 0, QApplication::UnicodeUTF8));
-        cmbApkIcon->clear();
-        cmbApkIcon->insertItems(0, QStringList()
-         << QApplication::translate("GenerateDlg", "\345\276\256\344\277\241", 0, QApplication::UnicodeUTF8)
-         << QApplication::translate("GenerateDlg", "QQ", 0, QApplication::UnicodeUTF8)
-        );
         grpRoot->setTitle(QApplication::translate("GenerateDlg", "\347\233\256\346\240\207\346\230\257\345\220\246\346\213\245\346\234\211root\346\235\203\351\231\220", 0, QApplication::UnicodeUTF8));
         chkRooted->setText(QApplication::translate("GenerateDlg", "\346\213\245\346\234\211root\346\235\203\351\231\220", 0, QApplication::UnicodeUTF8));
         chkNotRooted->setText(QApplication::translate("GenerateDlg", "\346\262\241\346\234\211root\346\235\203\351\231\220", 0, QApplication::UnicodeUTF8));

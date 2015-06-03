@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>470</width>
-    <height>513</height>
+    <height>587</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -162,7 +162,7 @@ QWidget
               <x>0</x>
               <y>0</y>
               <width>316</width>
-              <height>598</height>
+              <height>594</height>
              </rect>
             </property>
             <property name="styleSheet">
@@ -269,29 +269,7 @@ QWidget
                    </widget>
                   </item>
                   <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_12">
-                    <item>
-                     <widget class="QLabel" name="label_11">
-                      <property name="text">
-                       <string>设置apk图标：</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QComboBox" name="cmbApkIcon">
-                      <item>
-                       <property name="text">
-                        <string>微信</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>QQ</string>
-                       </property>
-                      </item>
-                     </widget>
-                    </item>
-                   </layout>
+                   <layout class="QHBoxLayout" name="horizontalLayout_12"/>
                   </item>
                  </layout>
                 </item>

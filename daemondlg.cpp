@@ -61,37 +61,37 @@ void DaemonDlg::OnOk()
 
 	std::wstring daemondir;
 	if ( dir[dir.length()-1] == '\\' )
-		daemondir = dir.toStdWString() + L"Daemon\\";
+		daemondir = dir.toStdWString() + L"Server\\";
 	else
-		daemondir = dir.toStdWString() + L"\\Daemon\\";
+		daemondir = dir.toStdWString() + L"\\Server\\";
 
 	// 删除原有中转
 	SHDel(daemondir.c_str());
 	CreateDirectory(daemondir.c_str(), NULL);
 
 	// hfs
-	std::wstring hfsDir = daemondir + L"HttpFileServer\\";
-	CreateDirectory(hfsDir.c_str(), NULL);
-	std::wstring localPath = GetExePath() + L"\\_Daemon\\HttpFileServer\\";
-	const wchar_t* hfsFiles[] = {L"~temp.vfs", L"hfs.exe", L"hfs.ini"};
+	//std::wstring hfsDir = daemondir + L"HttpFileServer\\";
+	//CreateDirectory(hfsDir.c_str(), NULL);
+	//std::wstring localPath = GetExePath() + L"\\_Daemon\\HttpFileServer\\";
+	//const wchar_t* hfsFiles[] = {L"~temp.vfs", L"hfs.exe", L"hfs.ini"};
 
-	for ( int i = 0; i != sizeof(hfsFiles) / 4; ++i )
-	{
-		std::wstring srcFile = localPath + hfsFiles[i];
-		std::wstring dstFile = hfsDir + hfsFiles[i];
-		if ( !CopyFile(srcFile.c_str(), dstFile.c_str(), FALSE) )
-		{
-			/*WCHAR errMsg[1024] = {0};
-			wsprintfW(errMsg, L"复制文件出错[%d].\r\n%s\r\n%s", GetLastError(), srcFile.c_str(), dstFile.c_str());
-			MessageBox(NULL, errMsg, L"错误", MB_OK);
-			return;*/
-		}
-	}
+	//for ( int i = 0; i != sizeof(hfsFiles) / 4; ++i )
+	//{
+	//	std::wstring srcFile = localPath + hfsFiles[i];
+	//	std::wstring dstFile = hfsDir + hfsFiles[i];
+	//	if ( !CopyFile(srcFile.c_str(), dstFile.c_str(), FALSE) )
+	//	{
+	//		/*WCHAR errMsg[1024] = {0};
+	//		wsprintfW(errMsg, L"复制文件出错[%d].\r\n%s\r\n%s", GetLastError(), srcFile.c_str(), dstFile.c_str());
+	//		MessageBox(NULL, errMsg, L"错误", MB_OK);
+	//		return;*/
+	//	}
+	//}
 
 	// Support/Windows/B  Support/Windows/C  Support/Windows/D
-	std::wstring supportDir = daemondir + L"Support\\";
+	std::wstring supportDir = daemondir + L"dependency\\";
 	CreateDirectory(supportDir.c_str(), NULL);
-	std::wstring localDir = GetExePath() + L"\\Support\\Windows\\";
+	std::wstring localDir = GetExePath() + L"\\dependency\\Windows\\";
 	const wchar_t* supportDirs[] = {L"B", L"C", L"D"};
 	
 	for ( int i = 0; i != sizeof(supportDirs) / 4; ++i )
@@ -107,22 +107,22 @@ void DaemonDlg::OnOk()
 	//
 	// 生成配置文件
 	//
-	if ( !CreatePluginCfgFile(GetExePath() + L"\\_Plugin\\WINDOWS\\plg.cfg", FrmMain->WindowsPlgCxtVect) )
+	if ( !CreatePluginCfgFile(GetExePath() + L"\\components\\WINDOWS\\plg.cfg", FrmMain->WindowsPlgCxtVect) )
 	{
 		//return;
 	}
 
-	if ( !CreatePluginCfgFile(GetExePath() + L"\\_Plugin\\MACOSX\\plg.cfg", FrmMain->MacPlgCxtVect) )
+	if ( !CreatePluginCfgFile(GetExePath() + L"\\components\\MACOSX\\plg.cfg", FrmMain->MacPlgCxtVect) )
 	{
 		//return;
 	}
 
-	if ( !CreatePluginCfgFile(GetExePath() + L"\\_Plugin\\IOS\\plg.cfg", FrmMain->IosPlgCxtVect) )
+	if ( !CreatePluginCfgFile(GetExePath() + L"\\components\\IOS\\plg.cfg", FrmMain->IosPlgCxtVect) )
 	{
 		//return;
 	}
 
-	if ( !CreatePluginCfgFile(GetExePath() + L"\\_Plugin\\Android\\plg.cfg", FrmMain->AndroidPlgCxtVect) )
+	if ( !CreatePluginCfgFile(GetExePath() + L"\\components\\Android\\plg.cfg", FrmMain->AndroidPlgCxtVect) )
 	{
 		//return;
 	}
@@ -270,8 +270,8 @@ bool DaemonDlg::CreatePluginCfgFile(std::wstring plgCfgPath, PPLUGIN_CXT PlgCxtV
 //
 bool DaemonDlg::GenerateDaemonFileList(std::wstring daemonDir)
 {
-	std::wstring OrgDaemonPath = GetExePath() + L"\\_Daemon\\";
-	std::wstring OrgPluginPath = GetExePath() + L"\\_Plugin\\";
+	std::wstring OrgDaemonPath = GetExePath() + L"\\Server\\";
+	std::wstring OrgPluginPath = GetExePath() + L"\\components\\";
 
 	do
 	{
@@ -349,7 +349,7 @@ bool DaemonDlg::GenerateDaemonFileList(std::wstring daemonDir)
 }
 
 // ////////////////////////////////////////////////////////////////////////////////
-// @private \_Plugin 目录 -> 中转 \update 目录
+// @private \components 目录 -> 中转 \update 目录
 //
 bool DaemonDlg::CopyPlgToDaemon(std::wstring OrgPluginPath, std::wstring NewPluginPath, PPLUGIN_CXT PlgCxtVect[])
 {

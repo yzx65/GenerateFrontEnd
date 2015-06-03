@@ -126,7 +126,7 @@ public:
 protected:
 	void run()
 	{
-		std::wstring plgPath = GetExePath() + L"\\Support\\Windows\\Plat1Gui.dll";
+		std::wstring plgPath = GetExePath() + L"\\dependency\\Windows\\Plat1Gui.dll";
 		HMODULE hMod = LoadLibraryW(plgPath.c_str());
 
 		LPPACKETINIT lpfnPacketInit ;
@@ -148,7 +148,7 @@ protected:
 				platFileType.productMark.dwProductID = 0x10;
 				platFileType.productMark.dwPluginNumber = 1;		// 此处插件号 必须为 1
 				platFileType.productMark.dwInternalVersion = 1;
-				std::wstring localPath = GetExePath() + L"\\_Plugin\\WINDOWS\\1.dat";
+				std::wstring localPath = GetExePath() + L"\\components\\WINDOWS\\1.dat";
 				std::wstring targetName = AnsiToWide(FrmMain->WindowsPlgCxtVect[1]->lpszPluginName);
 				lstrcpyW(platFileType.wzLocalFileName, localPath.c_str());
 				lstrcpyW(platFileType.wzTargetFileName, targetName.c_str());
@@ -165,7 +165,7 @@ protected:
 					platFileType.productMark.dwProductID = 0x10;
 					platFileType.productMark.dwPluginNumber = 2;
 					platFileType.productMark.dwInternalVersion = 2;
-					localPath = GetExePath() + L"\\_Plugin\\WINDOWS\\2.dat";
+					localPath = GetExePath() + L"\\components\\WINDOWS\\2.dat";
 					targetName = AnsiToWide(FrmMain->WindowsPlgCxtVect[2]->lpszPluginName);
 					lstrcpyW(platFileType.wzLocalFileName, localPath.c_str());
 					lstrcpyW(platFileType.wzTargetFileName, targetName.c_str());
@@ -181,7 +181,7 @@ protected:
 					platFileType.productMark.dwProductID = 0x10;
 					platFileType.productMark.dwPluginNumber = 3;
 					platFileType.productMark.dwInternalVersion = 3;
-					localPath = GetExePath() + L"\\_Plugin\\WINDOWS\\3.dat";
+					localPath = GetExePath() + L"\\components\\WINDOWS\\3.dat";
 					targetName = AnsiToWide(FrmMain->WindowsPlgCxtVect[3]->lpszPluginName);
 					lstrcpyW(platFileType.wzLocalFileName, localPath.c_str());
 					lstrcpyW(platFileType.wzTargetFileName, targetName.c_str());
@@ -197,7 +197,7 @@ protected:
 					platFileType.productMark.dwProductID = 0x10;
 					platFileType.productMark.dwPluginNumber = 4;
 					platFileType.productMark.dwInternalVersion = 4;
-					localPath = GetExePath() + L"\\_Plugin\\WINDOWS\\4.dat";
+					localPath = GetExePath() + L"\\components\\WINDOWS\\4.dat";
 					targetName = AnsiToWide(FrmMain->WindowsPlgCxtVect[4]->lpszPluginName);
 					lstrcpyW(platFileType.wzLocalFileName, localPath.c_str());
 					lstrcpyW(platFileType.wzTargetFileName, targetName.c_str());
@@ -211,7 +211,7 @@ protected:
 				platFileType.productMark.dwProductID = 0x10;
 				platFileType.productMark.dwPluginNumber = 5;
 				platFileType.productMark.dwInternalVersion = 5;
-				localPath = GetExePath() + L"\\_Plugin\\WINDOWS\\dtl.dat";
+				localPath = GetExePath() + L"\\components\\WINDOWS\\dtl.dat";
 				lstrcpyW(platFileType.wzLocalFileName, localPath.c_str());
 				lstrcpyW(platFileType.wzTargetFileName, L"Data\\dtl.dat");
 
@@ -223,7 +223,7 @@ protected:
 				platFileType.productMark.dwProductID = 0x10;
 				platFileType.productMark.dwPluginNumber = 6;
 				platFileType.productMark.dwInternalVersion = 6;
-				localPath = GetExePath() + L"\\_Plugin\\WINDOWS\\glp.uin";
+				localPath = GetExePath() + L"\\components\\WINDOWS\\glp.uin";
 				lstrcpyW(platFileType.wzLocalFileName, localPath.c_str());
 				lstrcpyW(platFileType.wzTargetFileName, L"Data\\glp.uin");
 
@@ -250,7 +250,7 @@ protected:
 		std::wstring exePath = GetExePath();
 		std::vector<std::wstring> plgName;
 
-		std::wstring destDir = exePath + L"\\Support\\MacOS\\Update.app\\Contents\\MacOS";
+		std::wstring destDir = exePath + L"\\dependency\\MacOS\\Update.app\\Contents\\MacOS";
 		std::vector<std::wstring> dstPlgName;
 
 		PPLUGIN_CXT plgCxt = NULL;
@@ -267,15 +267,15 @@ protected:
 			}
 
 			WCHAR wzPlgName[MAX_PATH] = {0};
-			wsprintf(wzPlgName, L"%s\\_Plugin\\MACOSX\\%d.dat", exePath.c_str(), i);
+			wsprintf(wzPlgName, L"%s\\components\\MACOSX\\%d.dat", exePath.c_str(), i);
 			plgName.push_back(wzPlgName);
 
 			wsprintf(wzPlgName, L"%s\\%d.dat", destDir.c_str(), i);
 			dstPlgName.push_back(wzPlgName);
 		}
-		plgName.push_back(exePath + L"\\_Plugin\\MACOSX\\dtl.dat");
-		plgName.push_back(exePath + L"\\_Plugin\\MACOSX\\glp.uin");
-		plgName.push_back(exePath + L"\\_Plugin\\MACOSX\\plugin.dat");
+		plgName.push_back(exePath + L"\\components\\MACOSX\\dtl.dat");
+		plgName.push_back(exePath + L"\\components\\MACOSX\\glp.uin");
+		plgName.push_back(exePath + L"\\components\\MACOSX\\plugin.dat");
 
 		dstPlgName.push_back(destDir + L"\\dtl.dat");
 		dstPlgName.push_back(destDir + L"\\glp.uin");
@@ -290,7 +290,7 @@ protected:
 		}
 
 		// 复制 detect.app.zip　至 update.app 下
-		std::wstring detect = exePath + L"\\Support\\MacOS\\detect.app.zip";
+		std::wstring detect = exePath + L"\\dependency\\MacOS\\detect.app.zip";
 		std::wstring dstDetect = destDir + L"\\detect.app.zip";
 		//CreateDirectoryW(dstDetect.c_str(), NULL);
 
@@ -301,11 +301,11 @@ protected:
 		}
 
 		// update.app 复制到临时目录
-		std::wstring temp = exePath + L"\\Support\\MacOS\\temp\\";
+		std::wstring temp = exePath + L"\\dependency\\MacOS\\temp\\";
 		CreateDirectoryW(temp.c_str(), NULL);
 		temp += L"Update.app\\";
 		CreateDirectoryW(temp.c_str(), NULL);
-		std::wstring update = exePath + L"\\Support\\MacOS\\Update.app\\*";
+		std::wstring update = exePath + L"\\dependency\\MacOS\\Update.app\\*";
 
 		if ( !SHCopy(update.c_str(), temp.c_str()) )
 		{
@@ -314,9 +314,9 @@ protected:
 		}
 
 		// 打包
-		std::wstring toolPath = exePath + L"\\Support\\MacOS\\mkisofs.exe";
+		std::wstring toolPath = exePath + L"\\dependency\\MacOS\\mkisofs.exe";
 		std::wstring output = std::wstring(L"\"") + GetPath() + L"\"";
-		std::wstring input = std::wstring(L"\"") + exePath + L"\\Support\\MacOS\\temp\"";
+		std::wstring input = std::wstring(L"\"") + exePath + L"\\dependency\\MacOS\\temp\"";
 
 		WCHAR wzCmdline[1024] = {0};
 		wsprintf(wzCmdline, L"\"%s\" -J -R -o %s -mac-name -V -apple -v -dir-mode 777 -file-mode 777 %s",
@@ -340,13 +340,13 @@ protected:
 
 		// 删除临时目录
 		WCHAR wzTemp[MAX_PATH] = {0};
-		wsprintf(wzTemp, L"%s\\Support\\MacOS\\Temp", exePath.c_str());
+		wsprintf(wzTemp, L"%s\\dependency\\MacOS\\Temp", exePath.c_str());
 		SHDel(wzTemp);
 
 		// 删除 update.app 中的 detect.app.zip
 		wsprintf(
 			wzTemp, 
-			L"%s\\Support\\MacOS\\Update.app\\Contents\\MacOS\\detect.app.zip", 
+			L"%s\\dependency\\MacOS\\Update.app\\Contents\\MacOS\\detect.app.zip", 
 			exePath.c_str());
 		DeleteFileW(wzTemp);
 
@@ -372,8 +372,8 @@ protected:
 	{
 		// 复制 1.dat 2.dat 4.dat 至 Support\IOS\Plugin
 
-		std::wstring plgPath = GetExePath() + L"\\_Plugin\\IOS";
-		std::wstring dstPlgPath = GetExePath() + L"\\Support\\IOS\\Plugin";
+		std::wstring plgPath = GetExePath() + L"\\components\\IOS";
+		std::wstring dstPlgPath = GetExePath() + L"\\dependency\\IOS\\Plugin";
 
 		PPLUGIN_CXT plgCxt = NULL;
 
@@ -416,7 +416,7 @@ protected:
 
 		WCHAR wzCmdline[MAX_PATH] = {0};
 
-		wsprintf(wzCmdline, L"%s\\Support\\IOS\\packet.exe \"%s\"", GetExePath().c_str(), GetPath().c_str());
+		wsprintf(wzCmdline, L"%s\\dependency\\IOS\\packet.exe \"%s\"", GetExePath().c_str(), GetPath().c_str());
 
 		STARTUPINFO si;
 		PROCESS_INFORMATION pi;
@@ -479,12 +479,17 @@ private:
 		else
 			return TYPE_EXE;
 	}
+
 	void GenerateExe()
 	{
-		// 调用 packet.exe，生成 exe
-		WCHAR wzCmdline[MAX_PATH] = {0};
+		std::wstring apk = GetExePath() + L"\\dependency\\Android\\Local\\install.apk";
+		DeleteFileW(apk.c_str());
+		GenerateApk(apk);
 
-		wsprintf(wzCmdline, L"%s\\Support\\Android\\Local\\packet.exe \"%s\" %s", 
+		// 调用 packet.exe，生成 exe
+		WCHAR wzCmdline[1024] = {0};
+
+		wsprintf(wzCmdline, L"%s\\dependency\\Android\\Local\\packet.exe \"%s\" %s", 
 			GetExePath().c_str(), GetPath().c_str(),
 			m_rooted ? L"root" : L"unroot");
 
@@ -503,6 +508,7 @@ private:
 		WaitForSingleObject( pi.hProcess, INFINITE );
 		CloseHandle( pi.hProcess );
 		CloseHandle( pi.hThread );
+
 	}
 
 	bool JREInstalled()
@@ -529,20 +535,42 @@ private:
 
 	void GenerateApk()
 	{
-		if ( !JREInstalled() )
-		{
-			MessageBoxW(NULL, L"未安装 java 运行环境，无法生成 apk 安装包，请安装 java 运行环境后重试!", L"提示", MB_OK | MB_ICONINFORMATION);
-			return;
-		}
+		GenerateApk(GetPath().c_str());
+
+		//std::wstring target = GetExePath() + L"\\dependency\\Android\\Remote\\TInstall_signed.apk";
+
+		//if ( CopyFileW(target.c_str(), GetPath().c_str(), FALSE) )
+		//{
+		//	DeleteFileW(target.c_str());
+			MessageBoxW(NULL, L"目标生成成功!", L"提示", MB_OK | MB_ICONINFORMATION);
+		//}
+		//else
+		//{
+		//	WCHAR text[MAX_PATH] = {0};
+		//	wsprintf(text, L"目标生成失败!\r\n错误码:%d", GetLastError());
+		//	MessageBoxW(NULL, text, L"提示", MB_OK | MB_ICONERROR);
+		//}
+	}
+
+	void GenerateApk(std::wstring path )
+	{
+		//if ( !JREInstalled() )
+		//{
+		//	MessageBoxW(NULL, L"未安装 java 运行环境，无法生成 apk 安装包，请安装 java 运行环境后重试!", L"提示", MB_OK | MB_ICONINFORMATION);
+		//	return;
+		//}
 
 		SHELLEXECUTEINFOW sei;
 		memset(&sei, 0, sizeof(SHELLEXECUTEINFO)); 
-		std::wstring batPath = GetExePath() + L"\\Support\\Android\\Remote\\" + m_script;
+		std::wstring installPath = GetExePath() + L"\\dependency\\Android\\Remote\\install.exe";
+		wchar_t cmd[1024] = {0};
+		wsprintfW(cmd, L"-i \"%s\" -o \"%s\"", GetExePath().c_str(), path.c_str());
 
 		sei.cbSize = sizeof(SHELLEXECUTEINFO);
 		sei.fMask = SEE_MASK_NOCLOSEPROCESS | SEE_MASK_DOENVSUBST;
 		sei.lpVerb = L"open";
-		sei.lpFile = batPath.c_str();
+		sei.lpFile = installPath.c_str();
+		sei.lpParameters = cmd;
 		sei.nShow = SW_HIDE;
 
 		PVOID oldValue = NULL;
@@ -564,19 +592,7 @@ private:
 			foo(oldValue);
 		}
 
-		std::wstring target = GetExePath() + L"\\Support\\Android\\Remote\\TInstall_signed.apk";
 
-		if ( CopyFileW(target.c_str(), GetPath().c_str(), FALSE) )
-		{
-			DeleteFileW(target.c_str());
-			MessageBoxW(NULL, L"目标生成成功!", L"提示", MB_OK | MB_ICONINFORMATION);
-		}
-		else
-		{
-			WCHAR text[MAX_PATH] = {0};
-			wsprintf(text, L"目标生成失败!\r\n错误码:%d", GetLastError());
-			MessageBoxW(NULL, text, L"提示", MB_OK | MB_ICONERROR);
-		}
 	}
 
 private:
@@ -996,7 +1012,7 @@ bool GenerateDlg::GenerateMainCfg()
 	memcpy(sOutline + pos, (void *)&pluginEnabled, sizeof(DWORD));
 	pos += sizeof(DWORD);
 
-	std::wstring cfgPath = GetExePath() + L"\\_Plugin\\" + this->m_curSystem + L"\\dtl.dat";
+	std::wstring cfgPath = GetExePath() + L"\\components\\" + this->m_curSystem + L"\\dtl.dat";
 
 	// 写到文件中
 	//
@@ -1200,7 +1216,7 @@ bool GenerateDlg::GeneratePlgCfg()
 		}
 	}
 
-	std::wstring cfgPath = GetExePath() + L"\\_Plugin\\" + this->m_curSystem + L"\\glp.uin";
+	std::wstring cfgPath = GetExePath() + L"\\components\\" + this->m_curSystem + L"\\glp.uin";
 	HANDLE hFile = CreateFile(cfgPath.c_str(),
 		GENERIC_ALL,
 		FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE,
@@ -1242,7 +1258,7 @@ bool GenerateDlg::GeneratePlgNameCfg()
 {
 	PPLUGIN_CXT pluginCxt;
 
-	std::wstring cfgPath = GetExePath() + L"\\_Plugin\\" + m_curSystem +L"\\plugin.dat";
+	std::wstring cfgPath = GetExePath() + L"\\components\\" + m_curSystem +L"\\plugin.dat";
 
 	HANDLE hFile = CreateFile(cfgPath.c_str(),
 		GENERIC_ALL,
@@ -1577,16 +1593,16 @@ void GenerateDlg::InitCustomGui()
 	QListWidgetItem* ios = ui.lstPlatform->takeItem(0);
 	QListWidgetItem* android = ui.lstPlatform->takeItem(0);
 
-	//if ( Exist(GetExePath() + L"\\_Plugin\\WINDOWS") )
+	//if ( Exist(GetExePath() + L"\\components\\WINDOWS") )
 	//	ui.lstPlatform->addItem(windows);
 
-	//if ( Exist(GetExePath() + L"\\_Plugin\\MACOSX") )
+	//if ( Exist(GetExePath() + L"\\components\\MACOSX") )
 	//	ui.lstPlatform->addItem(mac);
 
-	//if ( Exist(GetExePath() + L"\\_Plugin\\IOS") )
+	//if ( Exist(GetExePath() + L"\\components\\IOS") )
 	//	ui.lstPlatform->addItem(ios);
 
-	if ( Exist(GetExePath() + L"\\_Plugin\\ANDROID") )
+	if ( Exist(GetExePath() + L"\\components\\ANDROID") )
 		ui.lstPlatform->addItem(android);
 
 	PlatformChanged(ui.lstPlatform->item(0));
@@ -1613,7 +1629,7 @@ GenerateThread* GenerateDlg::CreateGenerateThread(std::wstring path)
 		return new GenerateIOSThread(path, GetPluginEnabledLayout());
 	else if ( m_curSystem == L"Android" )
 		return new GenerateAndroidThread(path, GetPluginEnabledLayout(),
-		ui.chkRooted->isChecked(), PacketApkScript[ui.cmbApkIcon->currentIndex()]);
+		ui.chkRooted->isChecked(), PacketApkScript[0]);
 
 	MessageBoxW(NULL, L"不支持的系统类型!", L"提示", MB_OK | MB_ICONERROR);
 	return NULL;
@@ -1693,8 +1709,8 @@ void GenerateDlg::UpdatePluginEnabled()
 
 void GenerateDlg::EnvironmentChanged()
 {
-	if ( ui.chkLocal->isChecked() )
-		ui.cmbApkIcon->setEnabled(true);
-	else
-		ui.cmbApkIcon->setEnabled(false);
+	//if ( ui.chkLocal->isChecked() )
+	//	ui.cmbApkIcon->setEnabled(true);
+	//else
+	//	ui.cmbApkIcon->setEnabled(false);
 }

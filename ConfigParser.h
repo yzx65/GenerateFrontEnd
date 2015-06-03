@@ -82,19 +82,19 @@ public:
 
 		if ( MacPlgCxtVect == PlgCxtVect )
 		{
-			strcpy(szName, "\\_Plugin\\MACOSX\\update.dat");
+			strcpy(szName, "\\components\\MACOSX\\update.dat");
 		}
 		else if ( IosPlgCxtVect == PlgCxtVect )
 		{
-			strcpy(szName, "\\_Plugin\\IOS\\update.dat");
+			strcpy(szName, "\\components\\IOS\\update.dat");
 		}
 		else if ( WindowsPlgCxtVect == PlgCxtVect )
 		{
-			strcpy(szName, "\\_Plugin\\WINDOWS\\update.dat");
+			strcpy(szName, "\\components\\WINDOWS\\update.dat");
 		}
 		else if ( AndroidPlgCxtVect == PlgCxtVect )
 		{
-			strcpy(szName, "\\_Plugin\\ANDROID\\update.dat");
+			strcpy(szName, "\\components\\ANDROID\\update.dat");
 		}
 
 		FILE *hFile = fopen(szDatPath,"rb");
