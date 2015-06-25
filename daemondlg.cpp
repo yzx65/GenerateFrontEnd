@@ -332,7 +332,7 @@ bool DaemonDlg::GenerateDaemonFileList(std::wstring daemonDir)
 			}
 
 		if ( ver == 7000 || ver == 9000 )
-			if ( !CopyPlgToDaemon(OrgPluginPath+L"ANDROID\\", NewPluginPath+L"ANDROID\\", FrmMain->WindowsPlgCxtVect) )
+			if ( !CopyPlgToDaemon(OrgPluginPath+L"ANDROID\\", NewPluginPath+L"ANDROID\\", FrmMain->AndroidPlgCxtVect) )
 			{
 				//break;
 			}

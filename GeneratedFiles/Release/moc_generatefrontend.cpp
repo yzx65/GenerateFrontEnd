@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'generatefrontend.h'
 **
-** Created: Thu Jun 11 22:20:09 2015
+** Created: Fri Jun 26 00:37:27 2015
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)
 **
 ** WARNING! All changes made in this file will be lost!
